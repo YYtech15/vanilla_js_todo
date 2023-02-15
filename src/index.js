@@ -9,7 +9,7 @@ const addTask = () => {
     li.innerText = inputText;
 
     const button_complete = document.createElement("button");
-    button_complete.addEventListener("click", () => completeTask());
+    button_complete.addEventListener("click", () => completeTask(button_complete.parentNode));
     const button_delete = document.createElement("button");
     button_delete.addEventListener("click", () => deleteTask(button_delete.parentNode));
 
@@ -22,8 +22,21 @@ const addTask = () => {
     document.getElementById("incomplete_list").appendChild(div);
 };
 
-const completeTask = () => {
+const completeTask = (completeTarget) => {
+    deleteTask(completeTarget);
+    const li_text = completeTarget.firstElementChild.innerText;
+    completeTarget.textContent = null;
 
+    const li = document.createElement("li");
+    li.innerText = li_text;
+
+    const button_back = document.createElement("button");
+    button_back.innerText = "戻す";
+    
+    completeTarget.appendChild(li);
+    completeTarget.appendChild(button_back);
+
+    document.getElementById("complete_list").appendChild(completeTarget);
 };
 
 const deleteTask = (deleteTarget) => {
