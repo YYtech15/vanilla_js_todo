@@ -3,28 +3,29 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link href="src/style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 
 <body>
-    <div>
+    <div class="input_area">
         <input placeholder="TODOを入力" />
         <button>追加</button>
     </div>
-    <div>
-        <p>未完了のTODO</p>
+    <div class="incomplete_area">
+        <p class="title">未完了のTODO</p>
         <ul>
-            <div>
+            <div class="list_row">
                 <li>TODOです</li>
                 <button>完了</button>
                 <button>削除</button>
             </div>
         </ul>
     </div>
-    <div>
-        <p>完了したTODO</p>
+    <div class="complete_area">
+        <p class="title">完了したTODO</p>
         <ul>
-            <div>
+            <div class="list_row">
                 <li>TODOでした</li>
                 <button>戻す</button>
             </div>
